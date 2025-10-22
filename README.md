@@ -1,3 +1,5 @@
+**Author:** İsmail Yeşilyurt
+
 # PriceEngine (ASP.NET Core 9 + SQLite)
 
 A small demo app: browse bus trips, calculate dynamic prices (occupancy, time-pressure, coupon), manage data in an admin panel, and run bulk price updates via a background queue. Includes structured logging with Serilog and correlation IDs.
