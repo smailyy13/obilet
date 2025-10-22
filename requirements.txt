@@ -1,0 +1,5 @@
+# RUNTIME / SDK
+dotnet-sdk==9.0.200
+
+# TOOLS
+dotnet-ef==9.x    # (global tool) Entity Framework CLI

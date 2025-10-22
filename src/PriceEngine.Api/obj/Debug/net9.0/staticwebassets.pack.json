@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\admin.html",
+      "PackagePath": "staticwebassets\\admin.html"
+    },
+    {
+      "Id": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\login.html",
+      "PackagePath": "staticwebassets\\login.html"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.PriceEngine.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.PriceEngine.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.PriceEngine.Api.props",
+      "PackagePath": "build\\PriceEngine.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.PriceEngine.Api.props",
+      "PackagePath": "buildMultiTargeting\\PriceEngine.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.PriceEngine.Api.props",
+      "PackagePath": "buildTransitive\\PriceEngine.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

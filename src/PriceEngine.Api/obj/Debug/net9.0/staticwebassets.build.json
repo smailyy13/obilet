@@ -1,0 +1,1042 @@
+{
+  "Version": 1,
+  "Hash": "8w1zbtCtOrQW83hQdWG8uBLHmiR8s8cIyEBifRxYvZc=",
+  "Source": "PriceEngine.Api",
+  "BasePath": "_content/PriceEngine.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "PriceEngine.Api\\wwwroot",
+      "Source": "PriceEngine.Api",
+      "ContentRoot": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\",
+      "BasePath": "_content/PriceEngine.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\1zizsjdqtb-yjqb1ism0j.gz",
+      "SourceId": "PriceEngine.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/PriceEngine.Api",
+      "RelativePath": "admin#[.{fingerprint=yjqb1ism0j}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\admin.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "9s32oas6zf",
+      "Integrity": "V8CCh8YTXEOzLgohPfusntuHbBxbz+xrslbdi3vBLxE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\admin.html"
+    },
+    {
+      "Identity": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\44pqf7ezyi-rybla8301y.gz",
+      "SourceId": "PriceEngine.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/PriceEngine.Api",
+      "RelativePath": "index#[.{fingerprint=rybla8301y}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\index.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "99jttuod4i",
+      "Integrity": "Q8RFQrkMB73p+hdgKBxpDnDUumVeVAJKOkQjLPpFgxY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\g3krx98s12-3a3ymkqkko.gz",
+      "SourceId": "PriceEngine.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/PriceEngine.Api",
+      "RelativePath": "login#[.{fingerprint=3a3ymkqkko}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\login.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "2bi2uoi91u",
+      "Integrity": "LmdqCyB2ouFXYcCbEZPJ1i9St/q55IuIlA+lETnvKQ0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\login.html"
+    },
+    {
+      "Identity": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\admin.html",
+      "SourceId": "PriceEngine.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\",
+      "BasePath": "_content/PriceEngine.Api",
+      "RelativePath": "admin#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yjqb1ism0j",
+      "Integrity": "0juToXlXW2eGQw0kEyQYVLHH+kBxLeCEHdVoulcL2vY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin.html"
+    },
+    {
+      "Identity": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\index.html",
+      "SourceId": "PriceEngine.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\",
+      "BasePath": "_content/PriceEngine.Api",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rybla8301y",
+      "Integrity": "LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\login.html",
+      "SourceId": "PriceEngine.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\",
+      "BasePath": "_content/PriceEngine.Api",
+      "RelativePath": "login#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3a3ymkqkko",
+      "Integrity": "G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\login.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "admin.html",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\1zizsjdqtb-yjqb1ism0j.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000241662639"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4137"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V8CCh8YTXEOzLgohPfusntuHbBxbz+xrslbdi3vBLxE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 10:48:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"0juToXlXW2eGQw0kEyQYVLHH+kBxLeCEHdVoulcL2vY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0juToXlXW2eGQw0kEyQYVLHH+kBxLeCEHdVoulcL2vY="
+        }
+      ]
+    },
+    {
+      "Route": "admin.html",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\admin.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13120"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0juToXlXW2eGQw0kEyQYVLHH+kBxLeCEHdVoulcL2vY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 10:48:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0juToXlXW2eGQw0kEyQYVLHH+kBxLeCEHdVoulcL2vY="
+        }
+      ]
+    },
+    {
+      "Route": "admin.html.gz",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\1zizsjdqtb-yjqb1ism0j.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4137"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V8CCh8YTXEOzLgohPfusntuHbBxbz+xrslbdi3vBLxE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 10:48:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-V8CCh8YTXEOzLgohPfusntuHbBxbz+xrslbdi3vBLxE="
+        }
+      ]
+    },
+    {
+      "Route": "admin.yjqb1ism0j.html",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\1zizsjdqtb-yjqb1ism0j.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000241662639"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4137"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V8CCh8YTXEOzLgohPfusntuHbBxbz+xrslbdi3vBLxE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 10:48:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"0juToXlXW2eGQw0kEyQYVLHH+kBxLeCEHdVoulcL2vY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yjqb1ism0j"
+        },
+        {
+          "Name": "label",
+          "Value": "admin.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0juToXlXW2eGQw0kEyQYVLHH+kBxLeCEHdVoulcL2vY="
+        }
+      ]
+    },
+    {
+      "Route": "admin.yjqb1ism0j.html",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\admin.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13120"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0juToXlXW2eGQw0kEyQYVLHH+kBxLeCEHdVoulcL2vY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 10:48:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yjqb1ism0j"
+        },
+        {
+          "Name": "label",
+          "Value": "admin.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0juToXlXW2eGQw0kEyQYVLHH+kBxLeCEHdVoulcL2vY="
+        }
+      ]
+    },
+    {
+      "Route": "admin.yjqb1ism0j.html.gz",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\1zizsjdqtb-yjqb1ism0j.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4137"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"V8CCh8YTXEOzLgohPfusntuHbBxbz+xrslbdi3vBLxE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 10:48:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yjqb1ism0j"
+        },
+        {
+          "Name": "label",
+          "Value": "admin.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-V8CCh8YTXEOzLgohPfusntuHbBxbz+xrslbdi3vBLxE="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\44pqf7ezyi-rybla8301y.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000313873195"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3185"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q8RFQrkMB73p+hdgKBxpDnDUumVeVAJKOkQjLPpFgxY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 11:02:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8803"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 11:02:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY="
+        }
+      ]
+    },
+    {
+      "Route": "index.html.gz",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\44pqf7ezyi-rybla8301y.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3185"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q8RFQrkMB73p+hdgKBxpDnDUumVeVAJKOkQjLPpFgxY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 11:02:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q8RFQrkMB73p+hdgKBxpDnDUumVeVAJKOkQjLPpFgxY="
+        }
+      ]
+    },
+    {
+      "Route": "index.rybla8301y.html",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\44pqf7ezyi-rybla8301y.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000313873195"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3185"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q8RFQrkMB73p+hdgKBxpDnDUumVeVAJKOkQjLPpFgxY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 11:02:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rybla8301y"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY="
+        }
+      ]
+    },
+    {
+      "Route": "index.rybla8301y.html",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8803"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 11:02:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rybla8301y"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY="
+        }
+      ]
+    },
+    {
+      "Route": "index.rybla8301y.html.gz",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\44pqf7ezyi-rybla8301y.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3185"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q8RFQrkMB73p+hdgKBxpDnDUumVeVAJKOkQjLPpFgxY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 11:02:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rybla8301y"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q8RFQrkMB73p+hdgKBxpDnDUumVeVAJKOkQjLPpFgxY="
+        }
+      ]
+    },
+    {
+      "Route": "login.3a3ymkqkko.html",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\g3krx98s12-3a3ymkqkko.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000970873786"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1029"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LmdqCyB2ouFXYcCbEZPJ1i9St/q55IuIlA+lETnvKQ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 09:02:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3a3ymkqkko"
+        },
+        {
+          "Name": "label",
+          "Value": "login.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU="
+        }
+      ]
+    },
+    {
+      "Route": "login.3a3ymkqkko.html",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\login.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1973"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 09:02:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3a3ymkqkko"
+        },
+        {
+          "Name": "label",
+          "Value": "login.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU="
+        }
+      ]
+    },
+    {
+      "Route": "login.3a3ymkqkko.html.gz",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\g3krx98s12-3a3ymkqkko.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1029"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LmdqCyB2ouFXYcCbEZPJ1i9St/q55IuIlA+lETnvKQ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 09:02:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3a3ymkqkko"
+        },
+        {
+          "Name": "label",
+          "Value": "login.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LmdqCyB2ouFXYcCbEZPJ1i9St/q55IuIlA+lETnvKQ0="
+        }
+      ]
+    },
+    {
+      "Route": "login.html",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\g3krx98s12-3a3ymkqkko.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000970873786"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1029"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LmdqCyB2ouFXYcCbEZPJ1i9St/q55IuIlA+lETnvKQ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 09:02:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU="
+        }
+      ]
+    },
+    {
+      "Route": "login.html",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\wwwroot\\login.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1973"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 09:02:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU="
+        }
+      ]
+    },
+    {
+      "Route": "login.html.gz",
+      "AssetFile": "C:\\Users\\ismail\\Desktop\\obilet\\PriceEngine\\src\\PriceEngine.Api\\obj\\Debug\\net9.0\\compressed\\g3krx98s12-3a3ymkqkko.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1029"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LmdqCyB2ouFXYcCbEZPJ1i9St/q55IuIlA+lETnvKQ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 22 Oct 2025 09:02:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LmdqCyB2ouFXYcCbEZPJ1i9St/q55IuIlA+lETnvKQ0="
+        }
+      ]
+    }
+  ]
+}

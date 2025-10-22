@@ -1,0 +1,40 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/PriceEngine.Api/admin.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\admin.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0juToXlXW2eGQw0kEyQYVLHH\u002BkBxLeCEHdVoulcL2vY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"13120"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00220juToXlXW2eGQw0kEyQYVLHH\u002BkBxLeCEHdVoulcL2vY=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 10:48:49 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PriceEngine.Api/admin.yjqb1ism0j.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\admin.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yjqb1ism0j"},{"Name":"integrity","Value":"sha256-0juToXlXW2eGQw0kEyQYVLHH\u002BkBxLeCEHdVoulcL2vY="},{"Name":"label","Value":"_content/PriceEngine.Api/admin.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"13120"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00220juToXlXW2eGQw0kEyQYVLHH\u002BkBxLeCEHdVoulcL2vY=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 10:48:49 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PriceEngine.Api/index.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"8803"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 11:02:46 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PriceEngine.Api/index.rybla8301y.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rybla8301y"},{"Name":"integrity","Value":"sha256-LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY="},{"Name":"label","Value":"_content/PriceEngine.Api/index.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"8803"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022LTYFrZMKvBSL89wmaj46eAz66RELBcC1L2OxH0eYVqY=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 11:02:46 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PriceEngine.Api/login.3a3ymkqkko.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\login.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3a3ymkqkko"},{"Name":"integrity","Value":"sha256-G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU="},{"Name":"label","Value":"_content/PriceEngine.Api/login.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1973"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 09:02:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PriceEngine.Api/login.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\login.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1973"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022G4u5g3sKl/kRJt2ZVlVZouPzL80cxi4avkBHxlAL6WU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 22 Oct 2025 09:02:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

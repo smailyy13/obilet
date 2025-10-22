@@ -1,0 +1,16 @@
+services:
+  priceengine:
+    build:
+      context: .
+      dockerfile: src/PriceEngine.Api/Dockerfile
+    container_name: priceengine
+    ports:
+      - "5279:8080"                # host:container
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Production"
+      ConnectionStrings__Default: "Data Source=/data/app.db"
+      Serilog__WriteTo__1__Args__path: "/logs/priceengine-.log"
+    volumes:
+      - ./data:/data               # sqlite kalıcı
+      - ./logs:/logs               # serilog dosyaları
+    restart: unless-stopped

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>obilet – Otobüs Biletleri (Demo)</title>
+  <style>
+    :root{--red:#E11D48;--line:#E5E7EB;--muted:#6B7280;--dark:#111827}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa;color:#111}
+    .top{background:var(--red);color:#fff;padding:12px 16px;display:flex;align-items:center;gap:16px}
+    .brand{font-weight:800;letter-spacing:.5px;font-size:22px}
+    .nav{display:flex;gap:8px}.pill{background:rgba(255,255,255,.15);padding:8px 12px;border-radius:999px}
+    .wrap{max-width:1100px;margin:16px auto;padding:0 16px}
+    .filters{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:10px}
+    select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font-size:14px;background:#fff}
+    button{padding:10px 14px;border:0;border-radius:8px;background:var(--red);color:#fff;font-weight:600;cursor:pointer}
+    .list{margin-top:12px;display:flex;flex-direction:column;gap:12px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+    .row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center}
+    .route{display:grid;grid-template-columns:1fr 24px 1fr;gap:8px;align-items:center}
+    .city{font-weight:700;font-size:18px}.arrow{color:var(--muted);text-align:center}
+    .meta{color:var(--muted);font-size:12px}
+    .coupon{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+    .coupon-row{display:flex;gap:6px;align-items:center}
+    .coupon input{width:160px;padding:8px;border:1px solid var(--line);border-radius:8px}
+    .coupon-error{color:#b91c1c;font-size:12px;min-height:16px}
+    .price{font-weight:800;font-size:22px}
+    .small{font-size:12px;color:var(--muted)}
+    .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+    .tag{background:#FEE2E2;color:#991B1B;border:1px solid #FCA5A5;border-radius:999px;padding:4px 8px;font-size:12px}
+    .expand{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px;display:none}
+    a.btn{color:#fff;text-decoration:none;background:#111827;padding:8px 12px;border-radius:8px}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">obilet</div>
+    <div style="margin-left:auto" class="small"><a class="btn" href="/admin">Admin</a></div>
+  </div>
+
+  <div class="wrap">
+    <!-- Filtreler -->
+    <div class="filters">
+      <select id="from"></select>
+      <select id="to"></select>
+      <select id="day">
+        <option value="">Gün: Tümü</option>
+        <option value="today">Bugün</option>
+        <option value="tomorrow">Yarın</option>
+        <option value="week">Bu Hafta</option>
+      </select>
+      <select id="sort">
+        <option value="asc">Sıralama: Saat ↑</option>
+        <option value="desc">Sıralama: Saat ↓</option>
+      </select>
+      <button id="applyBtn">Filtrele</button>
+    </div>
+
+    <div class="small" style="margin:8px 0">Tarih kullanıcı tarafından değiştirilemez; kalkış tarih–saat veritabanından gelir.</div>
+
+    <div id="list" class="list"></div>
+  </div>
+
+<script>
+let allBuses=[], filtered=[];
+
+function splitRoute(name){
+  const m = name.split(/→|->|—|-|>/).map(s=>s.trim()).filter(Boolean);
+  if(m.length>=2) return {from:m[0], to:m[1]}; return {from:name, to:""};
+}
+function uniq(arr){return [...new Set(arr)].sort((a,b)=>a.localeCompare(b,'tr'));}
+
+async function init(){
+  const r = await fetch('/buses');
+  allBuses = await r.json();
+
+  const origins = uniq(allBuses.map(b=>splitRoute(b.name).from));
+  const dests   = uniq(allBuses.map(b=>splitRoute(b.name).to));
+  from.innerHTML = `<option value="">Kalkış: Tümü</option>` + origins.map(o=>`<option>${o}</option>`).join('');
+  to.innerHTML   = `<option value="">Varış: Tümü</option>` + dests.map(d=>`<option>${d}</option>`).join('');
+  applyBtn.onclick = applyFilters;
+
+  filtered = [...allBuses];
+  render();
+}
+
+function applyFilters(){
+  const f = from.value.trim(); const t = to.value.trim();
+  const d = day.value; const s = sort.value;
+
+  filtered = allBuses.filter(b=>{
+    const r = splitRoute(b.name);
+    if(f && r.from!==f) return false;
+    if(t && r.to!==t) return false;
+    const dep = new Date(b.departureTime);
+    const now = new Date();
+    const start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const endWeek = new Date(start); endWeek.setDate(start.getDate()+7);
+
+    if(d==='today'){
+      if(dep < start || dep >= new Date(start.getTime()+24*60*60*1000)) return false;
+    } else if(d==='tomorrow'){
+      const t0=new Date(start); t0.setDate(start.getDate()+1);
+      const t1=new Date(start); t1.setDate(start.getDate()+2);
+      if(dep < t0 || dep >= t1) return false;
+    } else if(d==='week'){
+      if(dep < start || dep >= endWeek) return false;
+    }
+    return true;
+  });
+
+  filtered.sort((a,b)=>{
+    const da=new Date(a.departureTime), db=new Date(b.departureTime);
+    return s==='asc' ? da-db : db-da;
+  });
+
+  render();
+}
+
+function render(){
+  const list=document.getElementById('list'); list.innerHTML='';
+  if(filtered.length===0){ list.innerHTML='<div class="small">Sefer bulunamadı.</div>'; return; }
+
+  filtered.forEach(b=>{
+    const {from,to} = splitRoute(b.name);
+    const dep = new Date(b.departureTime);
+    const hour = dep.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+    const date = dep.toLocaleDateString();
+    const doluluk = Math.round((b.soldSeats / Math.max(1,b.capacity)) * 100);
+
+    const card=document.createElement('div'); card.className='card';
+    card.innerHTML = `
+      <div class="row">
+        <div>
+          <div class="route">
+            <div class="city">${from}</div><div class="arrow">→</div><div class="city">${to}</div>
+          </div>
+          <div class="meta">${date} · ${hour} · Doluluk: %${doluluk}</div>
+          <div class="tags" id="tags-${b.id}"></div>
+        </div>
+        <div class="coupon">
+          <div class="coupon-row">
+            <input id="cp-${b.id}" type="text" placeholder="Kupon (opsiyonel)">
+            <button onclick="calc(${b.id}, ${b.basePrice}, ${b.capacity}, ${b.soldSeats}, '${b.departureTime}')">Fiyatı Gör</button>
+          </div>
+          <div id="err-${b.id}" class="coupon-error"></div>
+        </div>
+        <div class="price" id="p-${b.id}">—</div>
+      </div>
+      <div class="expand" id="ex-${b.id}">
+        <div class="small">Fiyat hesaplandı. İndirim etiketleri yukarıda görünüyor.</div>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+}
+
+async function calc(id, basePrice, capacity, soldSeats, departureIso){
+  const coupon = document.getElementById(`cp-${id}`).value.trim() || null;
+  const errEl = document.getElementById(`err-${id}`);
+  errEl.textContent = "";
+
+  try {
+    const res = await fetch('/price/calculate', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        basePrice, capacity, soldSeats,
+        departureTime: departureIso,
+        couponCode: coupon
+      })
+    });
+
+    if(res.status === 404){
+      const data = await res.json().catch(()=>null);
+      errEl.textContent = data?.message || "Kupon bulunamadı.";
+      document.getElementById(`p-${id}`).textContent = "—";
+      return;
+    }
+    if(res.status === 400){
+      const data = await res.json().catch(()=>null);
+      errEl.textContent = data?.message || "Kupon geçersiz veya süresi dolmuş.";
+      document.getElementById(`p-${id}`).textContent = "—";
+      return;
+    }
+    if(!res.ok){
+      errEl.textContent = "Fiyat hesaplama başarısız.";
+      document.getElementById(`p-${id}`).textContent = "—";
+      return;
+    }
+
+    const data = await res.json();
+    document.getElementById(`p-${id}`).textContent = `${data.finalPrice.toFixed(2)} ₺`;
+
+    const labelMap = {
+      "OccupancyRule": "Doluluk indirimi",
+      "TimePressureRule": "Erken alım fırsatı",
+      "CouponRule": "Kupon indirimi"
+    };
+    const tagsEl = document.getElementById(`tags-${id}`);
+    tagsEl.innerHTML = (data.steps||[])
+      .filter(s => s.delta < 0)
+      .map(s => `<span class="tag">${labelMap[s.rule] || "İndirim"}</span>`).join('');
+
+    document.getElementById(`ex-${id}`).style.display = 'block';
+  } catch (err){
+    errEl.textContent = "Bağlantı hatası: " + err.message;
+  }
+}
+
+
+init();
+</script>
+</body>
+</html>

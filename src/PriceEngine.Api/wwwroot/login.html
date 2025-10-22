@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Giriş – obilet (Demo)</title>
+<style>
+:root{--red:#E11D48;--line:#E5E7EB}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#fafafa}
+.top{background:var(--red);color:#fff;padding:14px 16px;font-weight:800;font-size:20px}
+.center{display:grid;place-items:center;height:calc(100vh - 56px)}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;width:320px}
+label{display:block;font-size:12px;margin:8px 0 4px;color:#374151}
+input{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px}
+button{width:100%;padding:10px;border:0;border-radius:8px;background:#E11D48;color:#fff;margin-top:12px;font-weight:700}
+.err{color:#b91c1c;font-size:12px;margin-top:8px;min-height:16px;text-align:center}
+a{color:#E11D48;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top">obilet</div>
+<div class="center">
+  <div class="card">
+    <h3 style="margin-top:0">Admin Girişi</h3>
+    <label>Kullanıcı Adı</label><input id="u" value="admin">
+    <label>Şifre</label><input id="p" type="password" value="admin">
+    <button onclick="login()">Giriş Yap</button>
+    <div id="e" class="err"></div>
+    <div style="text-align:center;margin-top:8px"><a href="/">← Ana sayfa</a></div>
+  </div>
+</div>
+<script>
+async function login(){
+  document.getElementById('e').textContent='';
+  const body = { username: document.getElementById('u').value, password: document.getElementById('p').value };
+  const r = await fetch('/api/auth/login',{ method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+  if(!r.ok){ document.getElementById('e').textContent='Hatalı kullanıcı adı/şifre'; return; }
+  location.href='/admin';
+}
+</script>
+</body>
+</html>

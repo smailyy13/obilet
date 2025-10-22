@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin – obilet (Demo)</title>
+  <style>
+    :root{--red:#E11D48;--line:#E5E7EB;--muted:#6B7280}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#fafafa}
+    .top{background:var(--red);color:#fff;padding:12px 16px;display:flex;align-items:center}
+    .brand{font-weight:800;font-size:20px}
+    .wrap{max-width:1100px;margin:16px auto;padding:0 16px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+    label{display:block;font-size:13px;margin:8px 0 4px}
+    input{width:100%;padding:8px;border:1px solid var(--line);border-radius:8px}
+    button{padding:10px 14px;border:0;border-radius:8px;background:#E11D48;color:#fff;font-weight:600;cursor:pointer}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:middle}
+    .muted{color:var(--muted);font-size:12px}
+    .row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr auto;gap:8px;align-items:end;margin-top:8px}
+    .row-compact{display:grid;grid-template-columns:2fr 1fr auto;gap:8px;align-items:end;margin-top:8px}
+    .error{color:#b91c1c;margin-top:8px;font-size:13px;min-height:18px}
+    .soldInput{width:90px}
+    .small{font-size:12px;color:var(--muted)}
+    .progress{height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:8px}
+    .progress > div{height:100%;background:#10b981;width:0%}
+    .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;border:1px solid var(--line);margin-left:6px}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">obilet – Admin</div>
+    <div style="margin-left:auto"><a href="/" style="color:#fff;text-decoration:none">Ana sayfa</a></div>
+  </div>
+
+  <div class="wrap grid">
+    <!-- Bus -->
+    <div class="card">
+      <h3>Otobüs Ekle</h3>
+      <div class="row">
+        <div>
+          <label>Kalkış</label>
+          <input id="fromCity" placeholder="İstanbul">
+        </div>
+        <div>
+          <label>Varış</label>
+          <input id="toCity" placeholder="Ankara">
+        </div>
+        <div>
+          <label>Kapasite</label>
+          <input id="busCap" type="number" value="50" min="1">
+        </div>
+        <div>
+          <label>Satılan</label>
+          <input id="busSold" type="number" value="0" min="0">
+        </div>
+        <div>
+          <label>Baz Fiyat</label>
+          <input id="busPrice" type="number" step="0.01" value="1000" min="0">
+        </div>
+        <div>
+          <label>Kalkış Tarih-Saat</label>
+          <input id="busDt" type="datetime-local">
+        </div>
+        <div>
+          <button onclick="addBus()">Ekle</button>
+        </div>
+      </div>
+
+      <div id="busErr" class="error"></div>
+
+      <div class="muted" style="margin-top:12px">Mevcut Otobüsler</div>
+      <table id="busTable">
+        <thead>
+          <tr>
+            <th>Kalkış</th>
+            <th>Varış</th>
+            <th>Kalkış Tarih-Saat</th>
+            <th>Kapasite</th>
+            <th>Satılan (oto-kaydet)</th>
+            <th>Fiyat</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Coupons -->
+    <div class="card">
+      <h3>Kupon Ekle</h3>
+      <div class="row" style="grid-template-columns:2fr 1fr 2fr auto">
+        <div><label>Kod</label><input id="cCode" placeholder="EARLY10"></div>
+        <div><label>Yüzde</label><input id="cPercent" type="number" value="10" min="1" max="100"></div>
+        <div><label>Son Kullanma</label><input id="cExpire" type="datetime-local"></div>
+        <div><button onclick="addCoupon()">Ekle</button></div>
+      </div>
+
+      <div id="couponErr" class="error"></div>
+
+      <div class="muted" style="margin-top:12px">Mevcut Kuponlar</div>
+      <table id="couponTable"><thead><tr><th>Kod</th><th>%</th><th>Son</th><th></th></tr></thead><tbody></tbody></table>
+    </div>
+
+    <!-- Bulk price (Queue) -->
+    <div class="card">
+      <h3>Toplu Fiyat Güncelle (Kuyruklu)</h3>
+      <div class="row-compact">
+        <div>
+          <label>Yüzde (örn. 10 = %+10, -15 = %-15)</label>
+          <input id="bulkPercent" type="number" value="10" step="1">
+        </div>
+        <div><span id="bulkStatus" class="pill">Hazır</span></div>
+        <div><button onclick="startBulk()">Başlat</button></div>
+      </div>
+      <div class="progress"><div id="bulkBar"></div></div>
+      <div id="bulkInfo" class="muted" style="margin-top:8px"></div>
+    </div>
+  </div>
+
+<script>
+/* ————— helpers ————— */
+function redirectIfUnauthorized(res){
+  if (res.status === 401 || res.url.endsWith('/login')) { location.href = '/login'; return true; }
+  return false;
+}
+function splitRoute(name){
+  const m = name.split(/→|->|—|–|-|>/).map(s=>s.trim()).filter(Boolean);
+  if(m.length>=2) return {from:m[0], to:m[1]};
+  return {from:name, to:""};
+}
+
+/* ————— state ————— */
+const saveTimers = {}; // per-bus debounce
+let bulkTimer;
+
+/* ————— load lists ————— */
+async function loadAll(){
+  try{
+    // buses
+    let r = await fetch('/api/buses', { credentials: 'include' });
+    if (redirectIfUnauthorized(r)) return;
+    if (!r.ok) throw new Error('Otobüsler alınamadı');
+    const buses = await r.json();
+
+    const tbody = document.querySelector('#busTable tbody'); tbody.innerHTML='';
+    buses.forEach(b=>{
+      const dep=new Date(b.departureTime);
+      const {from, to} = splitRoute(b.name);
+
+      const tr=document.createElement('tr');
+      tr.innerHTML = `
+        <td>${from}</td>
+        <td>${to}</td>
+        <td>${dep.toLocaleDateString()} ${dep.toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}</td>
+        <td>${b.capacity}</td>
+        <td>
+          <input class="soldInput" id="sold-${b.id}" type="number" min="0" max="${b.capacity}" value="${b.soldSeats}">
+          <div class="small">0-${b.capacity}</div>
+        </td>
+        <td>${b.basePrice}</td>
+        <td>
+          <button style="background:#111827" onclick="delBus(${b.id})">Sil</button>
+        </td>`;
+
+      tbody.appendChild(tr);
+
+      // auto-save: input ve blur ile; 400ms debounce
+      const inp = tr.querySelector(`#sold-${b.id}`);
+      const handler = ()=> queueSaveSold(b.id, b.capacity, inp.value);
+      inp.addEventListener('input', handler);
+      inp.addEventListener('change', handler);
+      inp.addEventListener('blur', handler);
+    });
+
+    // coupons
+    r = await fetch('/api/coupons', { credentials: 'include' });
+    if (redirectIfUnauthorized(r)) return;
+    if (!r.ok) throw new Error('Kuponlar alınamadı');
+    const coupons = await r.json();
+
+    const ct = document.querySelector('#couponTable tbody'); ct.innerHTML='';
+    coupons.forEach(c=>{
+      const exp=new Date(c.expireAt).toLocaleString();
+      const tr=document.createElement('tr');
+      tr.innerHTML = `<td>${c.code}</td><td>${c.percent}</td><td>${exp}</td>
+        <td><button onclick="delCoupon(${c.id})">Sil</button></td>`;
+      ct.appendChild(tr);
+    });
+
+    busErr.textContent = '';
+    couponErr.textContent = '';
+  }catch(err){
+    busErr.textContent = err.message || String(err);
+  }
+}
+
+/* ————— auto-save sold seats ————— */
+function queueSaveSold(id, cap, val){
+  const n = parseInt(val||'0');
+  if (Number.isNaN(n) || n<0 || n>cap) { return; }
+  clearTimeout(saveTimers[id]);
+  saveTimers[id] = setTimeout(async ()=>{
+    const r = await fetch('/api/buses/'+id+'/sold', {
+      method:'PUT',
+      headers:{'Content-Type':'application/json'},
+      credentials:'include',
+      body: JSON.stringify({soldSeats:n})
+    });
+    if (redirectIfUnauthorized(r)) return;
+    if (!r.ok) {
+      const txt = await r.text();
+      busErr.textContent = txt || 'Kaydetme hatası';
+      return;
+    }
+    busErr.textContent = '';
+  }, 400);
+}
+
+/* ————— add / delete ————— */
+async function addBus(){
+  const from = document.getElementById('fromCity').value.trim();
+  const to   = document.getElementById('toCity').value.trim();
+  const cap  = parseInt(document.getElementById('busCap').value||'0');
+  const sold = parseInt(document.getElementById('busSold').value||'0');
+  const price= parseFloat(document.getElementById('busPrice').value||'0');
+  const dt   = new Date(document.getElementById('busDt').value);
+
+  if(!from || !to || cap<=0 || price<=0 || sold<0 || sold>cap){
+    busErr.textContent = 'Alanları kontrol et (kalkış/varış dolu olmalı, kapasite>0, fiyat>0, 0≤satılan≤kapasite).';
+    return;
+  }
+
+  const body = {
+    name: `${from} → ${to}`,
+    capacity: cap,
+    soldSeats: sold,
+    basePrice: price,
+    departureTime: dt.toISOString()
+  };
+
+  const r = await fetch('/api/buses', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    credentials:'include',
+    body:JSON.stringify(body)
+  });
+  if (redirectIfUnauthorized(r)) return;
+  if(!r.ok){ busErr.textContent = await r.text(); return; }
+
+  busErr.textContent = '';
+  await loadAll();
+
+  // formu hafif sıfırla
+  document.getElementById('busSold').value = '0';
+}
+
+async function delBus(id){
+  if(!confirm('Silinsin mi?')) return;
+  const r = await fetch('/api/buses/'+id, { method:'DELETE', credentials:'include' });
+  if (redirectIfUnauthorized(r)) return;
+  if(!r.ok){ alert(await r.text()); return; }
+  await loadAll();
+}
+
+async function addCoupon(){
+  const code = cCode.value.trim();
+  const percent = parseInt(cPercent.value||'0');
+  const dt = new Date(cExpire.value);
+  if(!code || percent<1 || percent>100){ couponErr.textContent='Kod ve yüzde (1..100) zorunlu.'; return; }
+
+  const r = await fetch('/api/coupons', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    credentials:'include',
+    body: JSON.stringify({ code, percent, expireAt: dt.toISOString() })
+  });
+  if (redirectIfUnauthorized(r)) return;
+  if(!r.ok){ couponErr.textContent = await r.text(); return; }
+  couponErr.textContent = '';
+  await loadAll();
+}
+
+async function delCoupon(id){
+  if(!confirm('Silinsin mi?')) return;
+  const r = await fetch('/api/coupons/'+id, { method:'DELETE', credentials:'include' });
+  if (redirectIfUnauthorized(r)) return;
+  if(!r.ok){ alert(await r.text()); return; }
+  await loadAll();
+}
+
+/* ————— Bulk Price (Queue) ————— */
+async function startBulk(){
+  const pct = parseFloat(document.getElementById('bulkPercent').value || '0');
+  if (!Number.isFinite(pct) || pct === 0) { alert('Yüzde gir'); return; }
+
+  const r = await fetch('/api/jobs/bulk-price', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    credentials:'include',
+    body: JSON.stringify({ percent: pct })
+  });
+  if (r.status === 202) {
+    const data = await r.json();
+    setBulkState('Queued', 0, `İş kuyruğa alındı. JobId: ${data.id}`);
+    pollJob(data.id);
+  } else {
+    alert(await r.text());
+  }
+}
+
+async function pollJob(id){
+  clearTimeout(bulkTimer);
+  const r = await fetch('/api/jobs/' + id, { credentials:'include' });
+  if (!r.ok) { setBulkState('Failed', 0, 'İş durumu alınamadı'); return; }
+  const j = await r.json();
+
+  // enum sayı mı yazı mı geldi? normalize et
+  const statusText = (typeof j.status === 'number')
+    ? (['Queued','Running','Succeeded','Failed'][j.status] || String(j.status))
+    : j.status;
+
+  const total = j.total ?? 0, done = j.processed ?? 0;
+  const pct = total > 0 ? Math.round((done/total)*100) : (statusText === 'Succeeded' ? 100 : 0);
+
+  setBulkState(statusText, pct, `${done}/${total}` + (j.error ? ` • HATA: ${j.error}` : ''));
+
+  if (statusText === 'Queued' || statusText === 'Running') {
+    bulkTimer = setTimeout(() => pollJob(id), 1000);
+  } else {
+    await loadAll(); // bitti → tabloyu yenile
+  }
+}
+
+function setBulkState(status, pct, text){
+  document.getElementById('bulkStatus').textContent = status;
+  document.getElementById('bulkBar').style.width = (pct||0) + '%';
+  document.getElementById('bulkInfo').textContent = text || '';
+}
+/* ————— defaults ————— */
+(function(){
+  const dt = new Date(Date.now()+24*60*60*1000); // yarın
+  dt.setMinutes(dt.getMinutes() - dt.getTimezoneOffset());
+  document.getElementById('busDt').value = dt.toISOString().slice(0,16);
+
+  const ce = new Date(Date.now()+60*24*60*60*1000);
+  ce.setMinutes(ce.getMinutes()-ce.getTimezoneOffset());
+  document.getElementById('cExpire').value = ce.toISOString().slice(0,16);
+})();
+
+loadAll();
+</script>
+</body>
+</html>

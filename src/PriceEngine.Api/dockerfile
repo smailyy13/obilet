@@ -1,0 +1,29 @@
+# ---------- Runtime base ----------
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+WORKDIR /app
+EXPOSE 8080
+ENV ASPNETCORE_URLS=http://0.0.0.0:8080
+# (optional) set timezone
+ENV TZ=Europe/Istanbul
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+# non-root user for safety
+RUN useradd -m appuser
+USER appuser
+
+# ---------- Build & publish ----------
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
+COPY PriceEngine.sln .
+COPY src/PriceEngine.Api/PriceEngine.Api.csproj src/PriceEngine.Api/
+RUN dotnet restore src/PriceEngine.Api/PriceEngine.Api.csproj
+COPY . .
+RUN dotnet publish src/PriceEngine.Api/PriceEngine.Api.csproj -c Release -o /app/publish /p:UseAppHost=false
+
+# ---------- Final ----------
+FROM base AS final
+WORKDIR /app
+COPY --from=build /app/publish ./
+# Persist DB & logs outside the image (compose ile mount edeceğiz)
+ENV ConnectionStrings__Default=Data Source=/data/app.db
+ENV Serilog__WriteTo__1__Args__path=/logs/priceengine-.log
+ENTRYPOINT ["dotnet","PriceEngine.Api.dll"]
